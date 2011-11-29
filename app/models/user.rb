@@ -42,7 +42,50 @@ class User < ActiveRecord::Base
     return nil if user.nil?
     return user if user.has_password?(submitted_password)
   end
-  
+
+#The authenticate method with User in place of self.
+  # def User.authenticate(email, submitted_password)
+    # user = find_by_email(email)
+    # return nil  if user.nil?
+    # return user if user.has_password?(submitted_password)
+  # end
+
+#The authenticate method with an explicit third return.
+  # def self.authenticate(email, submitted_password)
+    # user = find_by_email(email)
+    # return nil  if user.nil?
+    # return user if user.has_password?(submitted_password)
+    # return nil
+  # end
+ 
+ #The authenticate method using an if statement.
+  # def self.authenticate(email, submitted_password)
+    # user = find_by_email(email)
+    # if user.nil?
+      # nil
+    # elsif user.has_password?(submitted_password)
+      # user
+    # else
+      # nil
+    # end
+  # end
+
+#The authenticate method using an if statement and an implicit return.
+  # def self.authenticate(email, submitted_password)
+    # user = find_by_email(email)
+    # if user.nil?
+      # nil
+    # elsif user.has_password?(submitted_password)
+      # user
+    # end
+  # end
+
+# The authenticate method using the ternary operator
+  # def self.authenticate(email, submitted_password)
+    # user = find_by_email(email)
+    # user && user.has_password?(submitted_password) ? user : nil
+  # end
+
   private
 
     def encrypt_password
