@@ -9,6 +9,8 @@ gem 'sqlite3', '1.3.3'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
+gem 'gravatar_image_tag', '1.0.0.pre2'
+
 #gem 'win32console'
 
 group :development do
@@ -25,6 +27,7 @@ group :test do
   gem 'autotest', '4.4.6'
   gem 'autotest-rails-pure', '4.1.2'
   gem 'autotest-growl', '0.2.9'
+  gem 'factory_girl_rails', '1.0'
 end
 
 
