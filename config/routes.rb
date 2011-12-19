@@ -12,11 +12,14 @@ DemoApp::Application.routes.draw do
   match '/signout', :to => 'sessions#destroy'
   
   root :to => 'pages#home'
-  
-  resources :microposts
-  resources :users
-  resources :sessions, :only => [:new, :create, :destroy]
-  
+
+  resources :users do
+    resources :microposts, :only => [:index]
+  end
+  # resources :users  
+  resources :sessions,    :only => [:new, :create, :destroy]
+  resources :microposts,  :only => [:create, :destroy]
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

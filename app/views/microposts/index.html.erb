@@ -1,0 +1,9 @@
+<h1>All Microposts from <%= @user.name %></h1>
+
+<%= will_paginate(@microposts) %><br />
+
+<ul class="microposts">
+  <%= render @microposts %>
+</ul>
+
+<%= will_paginate(@microposts) %><br />

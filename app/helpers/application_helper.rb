@@ -13,4 +13,5 @@ module ApplicationHelper
       "#{base_title} | #{@title}"  #string interpolation
     end
   end
+  
 end
