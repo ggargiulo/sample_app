@@ -113,6 +113,12 @@ a.signup_button {
 	border-radius: 10px;
 }
 
+ul.sidebar {
+  width: 95%;
+  padding: 1em;
+  vertical-align: top;
+  background: #ffc;
+}
 /* User show page */
 
 table.profile {
@@ -244,5 +250,4 @@ form.new_micropost textarea {
   height: 4em;
   margin-bottom: 0;
 }
-
 

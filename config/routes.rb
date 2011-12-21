@@ -14,11 +14,15 @@ DemoApp::Application.routes.draw do
   root :to => 'pages#home'
 
   resources :users do
+    member do
+      get :following, :followers
+    end
     resources :microposts, :only => [:index]
   end
   # resources :users  
-  resources :sessions,    :only => [:new, :create, :destroy]
-  resources :microposts,  :only => [:create, :destroy]
+  resources :sessions,      :only => [:new, :create, :destroy]
+  resources :microposts,    :only => [:create, :destroy]
+  resources :relationships, :only => [:create, :destroy]
 
 
   # The priority is based upon order of creation:

@@ -1,9 +1,14 @@
-<h1>All Microposts from <%= @user.name %></h1>
+<h1>All Microposts from <%= gravatar_for @user %><%= @user.name %></h1>
 
 <%= will_paginate(@microposts) %><br />
-
+<ul class="sidebar round">
+  <strong>Name</strong> <%= @user.name %><br />
+  <strong>URL</strong> <%= link_to user_path(@user), @user %><br />
+  <strong>Microposts</strong> <a href=<%= user_path(@user)+ microposts_path %>><%= @user.microposts.count %></a><br />
+  <%= render 'shared/stats' %>
+</ul>	
 <ul class="microposts">
-  <%= render @microposts %>
+  <%= render @microposts %>  
 </ul>
 
 <%= will_paginate(@microposts) %><br />
